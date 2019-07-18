@@ -1,0 +1,2 @@
+\Users\CC-147\Documents\lisp\sbcl\cl-wmic\cl-wmic.asd
+\Users\CC-147\Documents\lisp\sbcl\cl-wmic\cl-wmic-test.asd
