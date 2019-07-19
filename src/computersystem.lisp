@@ -12,4 +12,10 @@
 		      :output s
 		      :external-format :sjis
 		      :error-output :interactive)))
-		      
+
+(defun split (x str)
+  (let ((pos (position x str)))
+    (if pos
+	(cons (subseq str 0 pos)
+	      (split x (subseq str (1+ pos))))
+	(list str))))
