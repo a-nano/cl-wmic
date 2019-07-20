@@ -1,6 +1,6 @@
 (defpackage #:cl-wmic/computersystem
   (:use #:cl)
-  (:export #:get-computersystem))
+  (:export #:computersystem))
 (in-package #:cl-wmic/computersystem)
 
 (defun get-computersystem ()
@@ -19,3 +19,11 @@
 	(cons (subseq str 0 pos)
 	      (split x (subseq str (1+ pos))))
 	(list str))))
+
+(defun computersystem ()
+  (mapcar #'(lambda (x) (split #\= x))
+	  (remove ""
+		  (split #\newline
+			 (remove #\return
+				 (get-computersystem)))
+		  :test #'string=)))
